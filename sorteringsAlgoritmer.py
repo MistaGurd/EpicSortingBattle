@@ -1,7 +1,7 @@
 import random, tests
 
 
-def BubbleSort(items): # Laver en funktion som får en liste af data fra items
+"""def BubbleSort(items): # Laver en funktion som får en liste af data fra items
     items = items.copy()  # Laver en kopi af listen så man ikke får justeret den originale.
     n = len(items)  # Her bliver længden af listen items gemt i variablen n. Dette bruges senere til at bestemme, hvor mange gange de indre og ydre loops skal køre.
     for x in range(n): # Begyndelse af ydre loop som kører n antal gange.
@@ -10,27 +10,24 @@ def BubbleSort(items): # Laver en funktion som får en liste af data fra items
                 temp = items[y + 1] # Hvis items[y] er større end items[y + 1], gemmes items[y + 1] midlertidigt i variablen temp. Dette gøres for at holde styr på værdien, mens vi udfører swap (bytte).
                 items[y + 1] = items[y] # Overskriver værdien i items[y + 1] med værdien af items[y]. Dette betyder, at det større element nu flyttes en position frem i listen, hvilket er nødvendigt for at "boble" det større element mod slutningen af listen
                 items[y] = temp # ;Hænger sammen med den forrige linje; gemmer værdien midlertidigt så den ikke går tabt.
-    return items # Når alt er sorteret bliver den nye sorteret liste gemt som items.
+    return items # Når alt er sorteret bliver den nye sorteret liste gemt som items."""
 
 
 """def TimSort(items):
     return sorted(items)"""
 
-def SelectionSort(items):
-    n = len(items)
+def SelectionSort(items): # Laver en funktion som får en liste af data fra items
+    n = len(items) # Her bliver længden af listen items gemt i variablen n. Dette bruges senere til at bestemme, hvor mange gange de indre og ydre loops skal køre.
 
-    for x in range(n):
-        index_of_min = x
+    for x in range(n): # En "for" løkke som iterere n antal gange. Variablen x repræsenterer det aktuelle indeks i iterationen.
+        index_of_min = x # Gemmer variable x som mindste værdi. Dette er en kodisk antagelse.
 
-        for y in range(x, n):
-            if items[index_of_min] > items[y]:
-                index_of_min = y
+        for y in range(x, n): # "For" løkke som itererer et interval mellem x og n, hvor y derefter tjekker om der er nogle værdier som kan byttes.
+            if items[index_of_min] > items[y]: # Hvis index_of_min er større end y i items:
+                index_of_min = y # Gem index_of_min som y i stedet for x.
 
-        # Swap the elements
-        temp = items[x]
-        items[x] = items[index_of_min]
-        items[index_of_min] = temp
-    return items
+        items[x],items[index_of_min] = items[index_of_min],items[x] # Python udfører swap
+    return items # Retunere den sorterede liste.
 
 
 
